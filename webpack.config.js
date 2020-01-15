@@ -15,7 +15,20 @@ module.exports = {
     contentBase: path.resolve(__dirname, "/public"),
     port: 17839,
     compress: true,
-    hot: true
+    hot: true,
+    stats: {
+      all: false,
+      // Show the url we're serving at
+      wds: true,
+      // Config for minimal console.log mess.
+      assets: false,
+      colors: true,
+      version: false,
+      hash: false,
+      timings: false,
+      chunks: false,
+      chunkModules: false
+    }
   },
 
   resolve: {
