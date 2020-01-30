@@ -64,6 +64,7 @@ or
 ### Build for prod
 
 After serving the project, you can open browser and visit http://localhost:13000
+
 ![result](https://github-oh-jeez-rick.oss-cn-hangzhou.aliyuncs.com/React-Typescript-Starter/result.jpg)
 
 ## Authors

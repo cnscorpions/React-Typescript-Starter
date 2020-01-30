@@ -59,9 +59,8 @@ or
 
 打开http://localhost:13000，结果如下：
 
+![结果图](https://github-oh-jeez-rick.oss-cn-hangzhou.aliyuncs.com/React-Typescript-Starter/result.jpg)
 
 ## 作者
 
 **[Gavin Chan](https://github.com/cnscorpions)** 
-
-
