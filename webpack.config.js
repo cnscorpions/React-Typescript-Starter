@@ -4,15 +4,13 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  devtool: "source-map",
-  entry: path.join(__dirname, "/src/index.tsx"),
+  entry: './src/index',
   output: {
-    path: path.join(__dirname, "/public"),
-    filename: "bundle.js"
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.bundle.js'
   },
-
   devServer: {
-    contentBase: path.resolve(__dirname, "/public"),
+    contentBase: path.resolve(__dirname, "dist"),
     port: 17839,
     compress: true,
     hot: true,
@@ -32,33 +30,16 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js", ".json"]
   },
 
   module: {
-    rules: [
-      {
-        test: /\.ts(x?)$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "ts-loader"
-          }
-        ]
-      },
-      {
-        test: /(\.jsx|\.js)$/,
-        use: {
-          loader: "babel-loader"
-        },
-        exclude: /node_modules/,
-      },
-      {
-        enforce: "pre",
-        test: /\.js$/,
-        loader: "source-map-loader"
-      }
-    ]
+    rules: [{
+            // Include ts, tsx, js, and jsx files.
+            test: /\.(ts|js)x?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+        }]
   },
 
   plugins: [
