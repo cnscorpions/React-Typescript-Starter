@@ -8,7 +8,9 @@
     "build": "webpack",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "husky": { "hooks": { "pre-commit": "pretty-quick --staged" } }
+    "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.tsx,.ts,.js,.json,.css,.scss}\"",
+    "format:fix": "pretty-quick --staged",
+    "precommit": "run-s format:fix"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +26,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^4.2.1",
-    "prettier": "1.19.1",
+    "npm-run-all": "^4.1.5",
     "pretty-quick": "^2.0.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
